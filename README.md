@@ -25,7 +25,7 @@ This service uses laravel version 9.38.0.
         "name": "Dody Mulyanto",
         "email": "Dody Mulyanto@gmail.com",
         "role": "TALENT",
-        "no_phone": 082188391021,
+        "no_phone": "082188391021",
         "created_at": "2022-11-05T16:57:41.000000Z",
         "updated_at": "2022-11-05T16:57:41.000000Z"
     },
