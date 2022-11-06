@@ -42,7 +42,9 @@ This service uses laravel version 9.38.0.
   + `POST`
 
 + **Request Body** : 
+  + `name` as `string`
   + `email` as `string`
+  + `role` as `string`
   + `password` as `string`
 
 + **Response**
