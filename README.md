@@ -56,4 +56,12 @@ This service uses laravel version 9.38.0.
     "message": "User created"
   }
   ```
+---
+
+
+## Testing
++ Login test
+
+  ![Tux, the Linux mascot](/screenshot/test_login.jpg)
+  
 
