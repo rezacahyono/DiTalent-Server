@@ -1,8 +1,30 @@
-# DiTalent Service
+# **DiTalent Service**
+
 
 DiTalent service is restfull api for [DiTalent]('https://github.com/rezacahyono/DiTalentApp') application. 
 This service uses laravel version 9.38.0.
 
+# Instalation
+
+1. Cloning this repository
+2. Install dependency using composer 
+    ```cmd
+      composer install
+    ```
+3. Turn on your DBMS, using XAMPP
+4. migration database like 
+    ```cmd
+      php artisan migrate:fresh
+    ```
+5. Running server
+    ```cmd
+      php artisan serve
+    ```
+6. If you want to run the test, use the following command :
+    ```cmd
+      php artisan test
+    ```
+# Endpoint
 ## **Login**
 + **URL** :
   + `/api/login`
@@ -55,16 +77,35 @@ This service uses laravel version 9.38.0.
     ```
 + **Code** : 
   + `200 OK`
----
+
 
 
 ## Testing
 + Login test
 
-  ![login test](/screenshot/test_login.jpg)
+  <!-- ![login test](/screenshot/test_login.jpg) -->
+
+  :white_check_mark: `Success login`
+
+  :white_check_mark: `Login user with wrong password`
+
+  :white_check_mark: `Required email login`
   
+  :white_check_mark: `Required password login`
 
 + Register test
 
-  ![login test](/screenshot/test_register.jpg)
+  <!-- ![login test](/screenshot/test_register.jpg) -->
+
+  :white_check_mark: `Required email registration`
+
+  :white_check_mark: `Required name registration`
+
+  :white_check_mark: `Required role registration`
+
+  :white_check_mark: `Required no phone registration`
+
+  :white_check_mark: `Required password registration`
+
+  :white_check_mark: `Success registration`
 
