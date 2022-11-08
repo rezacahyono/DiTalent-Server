@@ -58,6 +58,7 @@ class AuthController extends Controller
 			'name' => 'required|string|max:255|unique:users',
 			'email' => 'required|string|email|max:255|unique:users',
 			'role' => 'required|string',
+			'no_phone' => 'required|string|min:12',
 			'password' => 'required|string|min:6'
 		]);
 
@@ -80,6 +81,12 @@ class AuthController extends Controller
 					$validator->errors()->first("role")
 				], 400);
 			}
+			if ($validator->errors()->first("no_phone")) {
+				return response()->json([
+					'message' =>
+					$validator->errors()->first("no_phone")
+				], 400);
+			}
 			if ($validator->errors()->first("password")) {
 				return response()->json([
 					'message' =>
@@ -92,19 +99,14 @@ class AuthController extends Controller
 			'name' => $request->name,
 			'email' => $request->email,
 			'role' => $request->role,
+			'no_phone' => $request->no_phone,
 			'password' => Hash::make($request->password)
 		]);
 
-		if (!is_null($user)) {
-			return response()
-				->json([
-					'message' => "User created"
-				]);
-		} else {
-			return response()
-				->json([
-					'message' => "Failed created user"
-				]);
-		}
+
+		return response()
+			->json([
+				'message' => "User created"
+			], 200);
 	}
 }

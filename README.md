@@ -62,6 +62,10 @@ This service uses laravel version 9.38.0.
 ## Testing
 + Login test
 
-  ![Tux, the Linux mascot](/screenshot/test_login.jpg)
+  ![login test](/screenshot/test_login.jpg)
   
+
++ Register test
+
+  ![login test](/screenshot/test_register.jpg)
 
