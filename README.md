@@ -25,7 +25,7 @@ This service uses laravel version 9.38.0.
       php artisan test
     ```
 # Endpoint
-## **Login**
+### **Login**
 + **URL** :
   + `/api/login`
 
@@ -55,7 +55,7 @@ This service uses laravel version 9.38.0.
   + `200 OK`
 
 
-## **Register**
+### **Register**
 + **URL** :
   + `/api/register`
 
@@ -82,8 +82,6 @@ This service uses laravel version 9.38.0.
 
 ## Testing
 + Login test
-
-  <!-- ![login test](/screenshot/test_login.jpg) -->
 
   :white_check_mark: `Success login`
 
