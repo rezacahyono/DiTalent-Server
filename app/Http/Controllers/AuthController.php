@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Throwable;
 
 class AuthController extends Controller
 {
@@ -51,7 +52,7 @@ class AuthController extends Controller
 					'data' => $user,
 					'access_token' => $token,
 				]);
-		} catch (\Throwable $e) {
+		} catch (Throwable $e) {
 			return response()
 				->json([
 					'message' => 'there is an unexpected error',
@@ -103,24 +104,18 @@ class AuthController extends Controller
 			}
 		}
 
-		try {
-			$user = User::create([
-				'name' => $request->name,
-				'email' => $request->email,
-				'role' => $request->role,
-				'no_phone' => $request->no_phone,
-				'password' => Hash::make($request->password)
-			]);
 
-			return response()
-				->json([
-					'message' => "User created"
-				], 200);
-		} catch (\Throwable $e) {
-			return response()
-				->json([
-					'message' => 'there is an unexpected error',
-				], 500);
-		}
+		$user = User::create([
+			'name' => $request->name,
+			'email' => $request->email,
+			'role' => $request->role,
+			'no_phone' => $request->no_phone,
+			'password' => Hash::make($request->password)
+		]);
+
+		return response()
+			->json([
+				'message' => "User created"
+			], 200);
 	}
 }
