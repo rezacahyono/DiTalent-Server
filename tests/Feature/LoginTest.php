@@ -22,6 +22,7 @@ class LoginTest extends TestCase
         $this->json('POST', '/api/login', $loginData, ['Accept' => 'application/json'])
             ->assertStatus(200)
             ->assertJsonStructure([
+                'message',
                 'data' => [
                     'id',
                     'name',

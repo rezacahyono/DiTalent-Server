@@ -40,15 +40,23 @@ class AuthController extends Controller
 				], 401);
 		}
 
-		$user = User::where('email', $request['email'])->firstOrFail();
+		try {
+			$user = User::where('email', $request['email'])->firstOrFail();
 
-		$token = $user->createToken('auth_token')->plainTextToken;
+			$token = $user->createToken('auth_token')->plainTextToken;
 
-		return response()
-			->json([
-				'data' => $user,
-				'access_token' => $token,
-			]);
+			return response()
+				->json([
+					'message' => 'success',
+					'data' => $user,
+					'access_token' => $token,
+				]);
+		} catch (\Throwable $e) {
+			return response()
+				->json([
+					'message' => 'there is an unexpected error',
+				], 500);
+		}
 	}
 
 	public function register(Request $request)
@@ -95,18 +103,24 @@ class AuthController extends Controller
 			}
 		}
 
-		$user = User::create([
-			'name' => $request->name,
-			'email' => $request->email,
-			'role' => $request->role,
-			'no_phone' => $request->no_phone,
-			'password' => Hash::make($request->password)
-		]);
+		try {
+			$user = User::create([
+				'name' => $request->name,
+				'email' => $request->email,
+				'role' => $request->role,
+				'no_phone' => $request->no_phone,
+				'password' => Hash::make($request->password)
+			]);
 
-
-		return response()
-			->json([
-				'message' => "User created"
-			], 200);
+			return response()
+				->json([
+					'message' => "User created"
+				], 200);
+		} catch (\Throwable $e) {
+			return response()
+				->json([
+					'message' => 'there is an unexpected error',
+				], 500);
+		}
 	}
 }

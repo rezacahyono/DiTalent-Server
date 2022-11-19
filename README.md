@@ -93,8 +93,6 @@ This service uses laravel version 9.38.0.
 
 + Register test
 
-  <!-- ![login test](/screenshot/test_register.jpg) -->
-
   :white_check_mark: `Required email registration`
 
   :white_check_mark: `Required name registration`
