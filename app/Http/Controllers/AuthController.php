@@ -105,17 +105,25 @@ class AuthController extends Controller
 		}
 
 
-		$user = User::create([
-			'name' => $request->name,
-			'email' => $request->email,
-			'role' => $request->role,
-			'no_phone' => $request->no_phone,
-			'password' => Hash::make($request->password)
-		]);
+		try {
+			User::create([
+				'name' => $request->name,
+				'email' => $request->email,
+				'role' => $request->role,
+				'no_phone' => $request->no_phone,
+				'password' => Hash::make($request->password)
+			]);
 
-		return response()
-			->json([
-				'message' => "User created"
-			], 200);
+
+			return response()
+				->json([
+					'message' => "User created"
+				], 200);
+		} catch (Throwable $e) {
+			return response()
+				->json([
+					'message' => 'there is an unexpected error',
+				], 500);
+		}
 	}
 }
