@@ -16,11 +16,12 @@ This service uses laravel version 9.38.0.
     ```cmd
       php artisan migrate:fresh
     ```
-5. Running server
+5. Configuration file .env
+6. Running server
     ```cmd
       php artisan serve
     ```
-6. If you want to run the test, use the following command :
+7. If you want to run the test, use the following command :
     ```cmd
       php artisan test
     ```
@@ -40,7 +41,7 @@ This service uses laravel version 9.38.0.
   ```json
     {
       "data": {
-          "id": 1,
+          "id": "e8f373e1-ee8b-4f14-acfe-e696f2efcf2b",
           "name": "Dody Mulyanto",
           "email": "Dody Mulyanto@gmail.com",
           "role": "TALENT",
