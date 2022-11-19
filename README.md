@@ -41,7 +41,7 @@ This service uses laravel version 9.38.0.
   ```json
     {
       "data": {
-          "id": "e8f373e1-ee8b-4f14-acfe-e696f2efcf2b",
+          "id": 1,
           "name": "Dody Mulyanto",
           "email": "Dody Mulyanto@gmail.com",
           "role": "TALENT",
