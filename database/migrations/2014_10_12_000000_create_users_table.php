@@ -19,8 +19,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('role');
             $table->string('no_phone');
+            $table->string('avatar')->nullable();
+            $table->string('address')->nullable();
             $table->string('password');
-            $table->rememberToken();
             $table->timestamps();
         });
     }

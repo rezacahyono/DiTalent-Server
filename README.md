@@ -83,7 +83,6 @@ This service uses laravel version 9.38.0.
 ## Testing
 + Login test
 
-  <!-- ![login test](/screenshot/test_login.jpg) -->
 
   :white_check_mark: `Success login`
 
@@ -95,7 +94,6 @@ This service uses laravel version 9.38.0.
 
 + Register test
 
-  <!-- ![login test](/screenshot/test_register.jpg) -->
 
   :white_check_mark: `Required email registration`
 
