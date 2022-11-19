@@ -29,6 +29,8 @@ class LoginTest extends TestCase
                     'email',
                     'role',
                     'no_phone',
+                    'avatar',
+                    'address',
                     'created_at',
                     'updated_at'
                 ],
