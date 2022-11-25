@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -125,5 +127,14 @@ class AuthController extends Controller
 					'message' => 'there is an unexpected error',
 				], 500);
 		}
+	}
+
+	public function logout()
+	{
+		auth()->user()->tokens()->delete();
+		return response()
+			->json([
+				'message' => 'successfully logged out'
+			], 200);
 	}
 }
