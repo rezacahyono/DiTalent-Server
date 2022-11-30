@@ -40,7 +40,7 @@ Route::middleware('auth:sanctum')->group(function () {
     /**
      * Route Influence Cat
      */
-    Route::apiResource(['talent/influence' => InfluenceController::class]);
+    Route::apiResources(['talent/influence' => InfluenceController::class]);
 });
 
 Route::post('auth/login', [AuthController::class, 'login'])->name('login');

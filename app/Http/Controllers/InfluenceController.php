@@ -41,7 +41,7 @@ class InfluenceController extends Controller
                     ], 422);
             }
 
-            Influence::created([
+            Influence::create([
                 'talent_id' => $request->talent_id,
                 'name' => $request->name,
             ]);

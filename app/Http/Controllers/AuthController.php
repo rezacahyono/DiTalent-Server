@@ -113,7 +113,7 @@ class AuthController extends Controller
 		}
 		if ($user->role == "TALENT") {
 			if ($user->talent) {
-				$user->talent->influences;
+				$user->talent->influence;
 			}
 		} else {
 			$user->umkm;
@@ -143,7 +143,9 @@ class AuthController extends Controller
 				], 422);
 			} else {
 				$user = User::find($request->user()->id);
-				$user->no_phone = $request->no_phone;
+				if ($request->no_phone) {
+					$user->no_phone = $request->no_phone;
+				}
 				$user->address = $request->address;
 				if ($request->file('avatar') && $request->avatar->isValid()) {
 					if ($user->avatar != NULL) {

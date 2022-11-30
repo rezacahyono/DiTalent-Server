@@ -18,7 +18,7 @@ class Talent extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function influences()
+    public function influence()
     {
         return $this->hasMany(Influence::class);
     }

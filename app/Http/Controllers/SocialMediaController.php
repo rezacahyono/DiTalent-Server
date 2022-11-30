@@ -45,7 +45,7 @@ class SocialMediaController extends Controller
                     ], 422);
             }
 
-            SocialMedia::created([
+            SocialMedia::create([
                 'user_id' => $request->user_id,
                 'name' => $request->name,
                 'username' => $request->username,
