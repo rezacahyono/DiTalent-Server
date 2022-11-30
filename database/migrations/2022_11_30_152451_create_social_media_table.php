@@ -13,15 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('social_media', function (Blueprint $table) {
             $table->id();
-            $table->string('username')->unique();
-            $table->string('email')->unique();
-            $table->string('role');
-            $table->string('no_phone');
-            $table->string('avatar')->nullable();
-            $table->string('address')->nullable();
-            $table->string('password');
+            $table->foreignId("user_id");
+            $table->string('name');
+            $table->string('username');
+            $table->string('followers');
+            $table->string('insight');
+            $table->string('url_link');
             $table->timestamps();
         });
     }
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('social_media');
     }
 };
