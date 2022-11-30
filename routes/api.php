@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\InfluenceController;
+use App\Http\Controllers\SocialMediaController;
 use App\Http\Controllers\TalentController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +31,16 @@ Route::middleware('auth:sanctum')->group(function () {
      * Route Talent
      */
     Route::apiResources(['talent' => TalentController::class]);
+
+    /**
+     * Route Social Media
+     */
+    Route::apiResources(['social-media' => SocialMediaController::class]);
+
+    /**
+     * Route Influence Cat
+     */
+    Route::apiResource(['talent/influence' => InfluenceController::class]);
 });
 
 Route::post('auth/login', [AuthController::class, 'login'])->name('login');
